@@ -28,6 +28,7 @@ add_executable(my_stl
         tests/priority_queue_test.cpp
         tests/bst_test.cpp
         tests/splay_test.cpp
+        tests/avl_test.cpp
         include/smart/stack.h
         include/smart/queue.h
         include/smart/deque.h
@@ -42,6 +43,7 @@ add_executable(my_stl
         include/legacy/bst.h
         include/legacy/splay.h
         include/legacy/huffman.h
+        include/legacy/avl.h
 )
 
 target_link_libraries(

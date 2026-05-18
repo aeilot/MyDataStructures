@@ -25,10 +25,10 @@ The codebase is currently split into two groups:
 - `PriorityQueue`
 - `BST`
 - `SplayTree`
+- `AVL tree`
 
 ### Planned or worth expanding
 
-- AVL tree
 - Red-black tree
 - B-tree or B+ tree
 - Fibonacci heap

@@ -53,3 +53,23 @@ TEST(SortingTest, SelectionSortsReverseOrderedInput) {
 TEST(SortingTest, SelectionSortsMixedValues) {
 	ExpectSorted(&Sorting::selection, {3, -1, 7, 3, 0, -5}, {-5, -1, 0, 3, 3, 7});
 }
+
+TEST(SortingTest, BubbleHandlesEmptyVector) {
+	ExpectSorted(&Sorting::bubble, {}, {});
+}
+
+TEST(SortingTest, BubbleHandlesSingleElement) {
+	ExpectSorted(&Sorting::bubble, {42}, {42});
+}
+
+TEST(SortingTest, BubbleSortsAlreadySortedInput) {
+	ExpectSorted(&Sorting::bubble, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5});
+}
+
+TEST(SortingTest, BubbleSortsReverseOrderedInput) {
+	ExpectSorted(&Sorting::bubble, {5, 4, 3, 2, 1}, {1, 2, 3, 4, 5});
+}
+
+TEST(SortingTest, BubbleSortsMixedValues) {
+	ExpectSorted(&Sorting::bubble, {3, -1, 7, 3, 0, -5}, {-5, -1, 0, 3, 3, 7});
+}

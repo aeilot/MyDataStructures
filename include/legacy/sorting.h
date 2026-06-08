@@ -40,6 +40,22 @@ public:
 			std::swap(arr[i], arr[rec]);
 		}
 	}
+
+	static void bubble(std::vector<int>& arr) {
+		int n = arr.size();
+		bool flag = true;
+
+		while (flag) {
+			flag = false;
+			for (int i = 0; i<n-1; i++) {
+				int j = i+1;
+				if (arr[i] > arr[j]) {
+					std::swap(arr[i], arr[j]);
+					flag = true;
+				}
+			}
+		}
+	}
 };
 
 #endif //MY_STL_SORTING_H

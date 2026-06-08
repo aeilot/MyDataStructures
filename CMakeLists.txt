@@ -20,6 +20,7 @@ add_executable(my_stl
         tests/stack_test.cpp
         tests/queue_test.cpp
         tests/deque_test.cpp
+        tests/sorting_test.cpp
         tests/map_test.cpp
         tests/dsu_test.cpp
         tests/trie_test.cpp
@@ -44,6 +45,7 @@ add_executable(my_stl
         include/legacy/splay.h
         include/legacy/huffman.h
         include/legacy/avl.h
+        include/legacy/sorting.h
 )
 
 target_link_libraries(

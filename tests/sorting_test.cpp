@@ -114,3 +114,23 @@ TEST(SortingTest, MergeSortsMixedValues) {
 	ExpectSorted(&Sorting::merge, {3, -1, 7, 3, 0, -5}, {-5, -1, 0, 3, 3, 7});
 }
 
+TEST(SortingTest, HeapHandlesEmptyVector) {
+	ExpectSorted(&Sorting::heap, {}, {});
+}
+
+TEST(SortingTest, HeapHandlesSingleElement) {
+	ExpectSorted(&Sorting::heap, {42}, {42});
+}
+
+TEST(SortingTest, HeapSortsAlreadySortedInput) {
+	ExpectSorted(&Sorting::heap, {1, 2, 3, 4, 5}, {1, 2, 3, 4, 5});
+}
+
+TEST(SortingTest, HeapSortsReverseOrderedInput) {
+	ExpectSorted(&Sorting::heap, {5, 4, 3, 2, 1}, {1, 2, 3, 4, 5});
+}
+
+TEST(SortingTest, HeapSortsMixedValues) {
+	ExpectSorted(&Sorting::heap, {3, -1, 7, 3, 0, -5}, {-5, -1, 0, 3, 3, 7});
+}
+

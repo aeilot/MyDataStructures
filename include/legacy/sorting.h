@@ -67,7 +67,47 @@ public:
 		merge_sort(arr, 0, arr.size() - 1);
 	}
 
+	static void heap(std::vector<int>& arr) {
+		int n = arr.size();
+		if (n <= 1) return;
+		for (int i = (n-2)/2; i>=0; i--) {
+			heap_maxify(arr, i, n-1);
+		}
+		for (int i = n-1; i>0; i--) {
+			std::swap(arr[0], arr[i]);
+			heap_maxify(arr,0, i - 1);
+		}
+	}
+
 private:
+	static int iParent(int i) {
+		if (i <= 0) return 0;
+		return (i - 1) >> 1;
+	}
+
+	static int iLChild(int i) {
+		return (i << 1) + 1;
+	}
+
+	static int iRChild(int i) {
+		return (i << 1) + 2;
+	}
+
+	static void heap_maxify(std::vector<int>& arr, int i, int end) {
+		int child = iLChild(i);
+		int pa = i;
+
+		while (child<=end) {
+			if (child + 1 <= end && arr[child+1] > arr[child]) {
+				child++;
+			}
+			if (arr[pa] >= arr[child]) return;
+			std::swap(arr[child], arr[pa]);
+			pa = child;
+			child = iLChild(child);
+		}
+	}
+
 	static void quick_sort(std::vector<int>& arr, int left, int right) {
 		int l = left, r = right;
 		if (r<=l) return;
